@@ -1,10 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import actions from "./shared/actions";
 
 let root;
+let state;
 function render(props) {
-    // console.log("通过props获取主应用传递值", props.routeBase)
+    if (props) {
+        actions.setActions(props);
+        console.log(props)
+    }
+    // console.log("通过props获取主应用传递值", props)
     const dom = props?.container ? props.container.querySelector('#root-sub') : document.querySelector('#root-sub');
     root = ReactDOM.createRoot(dom);
     root.render(<App />);
