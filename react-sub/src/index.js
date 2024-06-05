@@ -4,6 +4,7 @@ import App from './App';
 
 let root;
 function render(props) {
+    // console.log("通过props获取主应用传递值", props.routeBase)
     const dom = props?.container ? props.container.querySelector('#root-sub') : document.querySelector('#root-sub');
     root = ReactDOM.createRoot(dom);
     root.render(<App />);
